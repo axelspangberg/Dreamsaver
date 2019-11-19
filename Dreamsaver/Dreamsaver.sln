@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dreamsaver.Web", "Dreamsaver\Dreamsaver.Web.csproj", "{5BB06486-3D04-4A51-AF0C-3713C98258D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DD3B429A-B88C-4F89-99D9-20F44D10E71F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dreamsaver.Core", "Dreamsaver.Core\Dreamsaver.Core.csproj", "{061910D8-86C8-4054-94DB-3FB7B3B1EE30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dreamsaver.Infrastructure.fakes", "Dreamsaver.Infrastructure.fakes\Dreamsaver.Infrastructure.fakes.csproj", "{8AD47743-AA1C-4267-91A8-BA62C5E472BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dreamsaver.Infrastructure", "Dreamsaver.Infrastructure\Dreamsaver.Infrastructure.csproj", "{D6237B7E-FE8F-466D-B736-4655A753A462}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F9020EB2-0AB2-4B8D-BF3F-B11FB80A969F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BB06486-3D04-4A51-AF0C-3713C98258D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB06486-3D04-4A51-AF0C-3713C98258D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB06486-3D04-4A51-AF0C-3713C98258D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB06486-3D04-4A51-AF0C-3713C98258D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061910D8-86C8-4054-94DB-3FB7B3B1EE30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061910D8-86C8-4054-94DB-3FB7B3B1EE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061910D8-86C8-4054-94DB-3FB7B3B1EE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061910D8-86C8-4054-94DB-3FB7B3B1EE30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD47743-AA1C-4267-91A8-BA62C5E472BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD47743-AA1C-4267-91A8-BA62C5E472BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD47743-AA1C-4267-91A8-BA62C5E472BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD47743-AA1C-4267-91A8-BA62C5E472BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6237B7E-FE8F-466D-B736-4655A753A462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6237B7E-FE8F-466D-B736-4655A753A462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6237B7E-FE8F-466D-B736-4655A753A462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6237B7E-FE8F-466D-B736-4655A753A462}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5BB06486-3D04-4A51-AF0C-3713C98258D9} = {DD3B429A-B88C-4F89-99D9-20F44D10E71F}
+		{061910D8-86C8-4054-94DB-3FB7B3B1EE30} = {DD3B429A-B88C-4F89-99D9-20F44D10E71F}
+		{8AD47743-AA1C-4267-91A8-BA62C5E472BA} = {DD3B429A-B88C-4F89-99D9-20F44D10E71F}
+		{D6237B7E-FE8F-466D-B736-4655A753A462} = {DD3B429A-B88C-4F89-99D9-20F44D10E71F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA86142F-DFD0-41D7-B383-D45035D0AB5F}
+	EndGlobalSection
+EndGlobal
