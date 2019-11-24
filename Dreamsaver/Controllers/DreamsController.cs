@@ -22,13 +22,5 @@ namespace Dreamsaver.Web.Controllers
         {
             return Ok(await _mediator.Send(new GetAllDreamsForUserQuery()));
         }
-        
-// Example of post
-//        [HttpPost("update")]
-//        public async Task<AlarmObjectFull> UpdateAlarmObject(UpdateAlarmObjectCommand command)
-//        {
-//            return await _mediator.Send(command);
-//        }
-        
     }
 }
