@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { DreamsListComponent } from './dreams-list/dreams-list.component';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { DreamsListComponent } from './dreams-list/dreams-list.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    FetchDataComponent,
     DreamsListComponent,
   ],
   imports: [
@@ -24,7 +22,6 @@ import { DreamsListComponent } from './dreams-list/dreams-list.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'dreams-list', component: DreamsListComponent },
     ])
   ],
