@@ -13,13 +13,49 @@ namespace Dreamsaver.Infrastructure.fakes.DreamsEntity
             {
                 new GetAllDreamsForUserQuery.Response
                 {
-                   Title = "Title",
-                   Description = "This is a fake description",
-                   Amount = 420,
+                   DreamsId = 1,
+                   Title = "Ny Cykel",
+                   Description = "Vill spara till att köpa ny cykel",
+                   Amount = 10000,
                    User = "Axel Spångberg",
-                   CreatedDate = DateTime.Now
+                   CreatedDate = DateTime.Now.AddDays(-1)
+                },
+                new GetAllDreamsForUserQuery.Response
+                {
+                    DreamsId = 2,
+                    Title = "Ny Datorskärm",
+                    Description = "Vill spara till att köpa ny Datorskärm",
+                    Amount = 5299,
+                    User = "Axel Spångberg",
+                    CreatedDate = DateTime.Now.AddYears(-1)
+                },
+                new GetAllDreamsForUserQuery.Response
+                {
+                    DreamsId = 3,
+                    Title = "Svensk Klassiker",
+                    Description = "Vill spara till att köpa alla grejerna till en svensk klassiker",
+                    Amount = 5520,
+                    User = "Axel Spångberg",
+                    CreatedDate = DateTime.Now.AddMinutes(-25)
+                },
+                new GetAllDreamsForUserQuery.Response
+                {
+                    DreamsId = 4,
+                    Title = "Utomlandsresa",
+                    Description = "Vill spara till att köpa en utomlandsresa",
+                    Amount = 8001,
+                    User = "Axel Spångberg",
+                    CreatedDate = DateTime.Now.AddYears(-1)
+                },
+                new GetAllDreamsForUserQuery.Response
+                {
+                    DreamsId = 5,
+                    Title = "Köpa bostadsrätt",
+                    Description = "Vill spara till att köpa en bostadsrätt",
+                    Amount = 4700000,
+                    User = "Axel Spångberg",
+                    CreatedDate = DateTime.Now.AddYears(-4)
                 }
-               
             };
         
         public async Task<IList<GetAllDreamsForUserQuery.Response>> GetDreams()

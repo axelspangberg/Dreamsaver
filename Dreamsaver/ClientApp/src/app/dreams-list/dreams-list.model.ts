@@ -1,8 +1,10 @@
-// example of a basic interface
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface DreamLists {
+  dreamsId: number;
+  title: string;
+  description: string;
+  amount: number;
+  createdDate: string;
+  user: string;
 }
+
+

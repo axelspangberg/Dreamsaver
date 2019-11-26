@@ -29,6 +29,7 @@ namespace Dreamsaver.Core.Requests.Dreams.Queries
 
         public class Response
         {
+            public int DreamsId { get; set; }
             public string Title { get; set; }
             public string Description { get; set; }
             public int Amount { get; set; }

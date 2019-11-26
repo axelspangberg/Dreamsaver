@@ -21,6 +21,6 @@ namespace Dreamsaver.Web.Controllers
         public async Task<ActionResult<IList<GetAllDreamsForUserQuery.Response>>> GetAllDreamsForUser()
         {
             return Ok(await _mediator.Send(new GetAllDreamsForUserQuery()));
-        }
+        } 
     }
 }
