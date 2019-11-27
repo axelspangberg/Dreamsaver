@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { DreamsListComponent } from './dreams-list/dreams-list.component';
-import { CreateDreamsComponent } from './dreams-list/create-dreams/create-dreams.component';
-import { EditDreamsComponent } from './dreams-list/edit-dreams/edit-dreams.component';
+import { DreamsListCreateComponent } from './dreams/dreams-list/dreams-list-create/dreams-list-create.component';
+// tslint:disable-next-line: max-line-length
+import { DreamsListDetailedInformationComponent } from './dreams/dreams-list/dreams-list-detailed-information/dreams-list-detailed-information.component';
+
 
 @NgModule({
   declarations: [
@@ -17,8 +19,8 @@ import { EditDreamsComponent } from './dreams-list/edit-dreams/edit-dreams.compo
     NavMenuComponent,
     HomeComponent,
     DreamsListComponent,
-    CreateDreamsComponent,
-    EditDreamsComponent,
+    DreamsListCreateComponent,
+    DreamsListDetailedInformationComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
