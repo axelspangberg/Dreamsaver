@@ -12,6 +12,9 @@ import { DreamsListCreateComponent } from './dreams/dreams-list/dreams-list-crea
 // tslint:disable-next-line: max-line-length
 import { DreamsListDetailedInformationComponent } from './dreams/dreams-list/dreams-list-detailed-information/dreams-list-detailed-information.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalComponent } from './shared/modal/modal.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -22,16 +25,18 @@ import { AppRoutingModule } from './app-routing.module';
     DreamsListComponent,
     DreamsListCreateComponent,
     DreamsListDetailedInformationComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'dreams-list', component: DreamsListComponent },
-    ]),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbModalModule
+  ],
+  entryComponents: [
+    ModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
