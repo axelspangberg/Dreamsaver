@@ -7,10 +7,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { DreamsListComponent } from './dreams-list/dreams-list.component';
+import { DreamsListComponent } from './dreams/dreams-list/dreams-list.component';
 import { DreamsListCreateComponent } from './dreams/dreams-list/dreams-list-create/dreams-list-create.component';
 // tslint:disable-next-line: max-line-length
 import { DreamsListDetailedInformationComponent } from './dreams/dreams-list/dreams-list-detailed-information/dreams-list-detailed-information.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DreamsListDetailedInformationComponent } from './dreams/dreams-list/dre
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'dreams-list', component: DreamsListComponent },
-    ])
+    ]),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
