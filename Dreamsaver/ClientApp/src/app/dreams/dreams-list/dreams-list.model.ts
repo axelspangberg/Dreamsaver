@@ -6,5 +6,3 @@ interface DreamLists {
   createdDate: string;
   user: string;
 }
-
-

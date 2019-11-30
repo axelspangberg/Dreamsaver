@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { DreamsListService } from './dreams-list.service';
-import { NgbModal, NgbModalOptions, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from 'src/app/shared/modal/modal.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dreams-list',
   templateUrl: './dreams-list.component.html',
-  styleUrls: ['./dreams-list.component.scss']
+  styleUrls: ['./dreams-list.component.scss'],
 })
 export class DreamsListComponent implements OnInit {
-
   dreamsList: DreamLists[];
   modalOptions: NgbModalOptions;
   closeResult: string;
 
-  constructor(readonly service: DreamsListService, private modalService: NgbModal) {
+  constructor(
+    readonly service: DreamsListService,
+    private modalService: NgbModal,
+    private toastr: ToastrService,
+  ) {
     this.modalOptions = {
       backdrop: 'static',
-      backdropClass: 'customBackdrop'
+      backdropClass: 'customBackdrop',
     };
   }
 
@@ -31,11 +35,9 @@ export class DreamsListComponent implements OnInit {
     });
   }
 
-
-    open() {
-      const modalRef = this.modalService.open(ModalComponent);
-      modalRef.componentInstance.title = 'I your title';
-      modalRef.componentInstance.content = 'I am your content';
+  open() {
+    const modalRef = this.modalService.open(ModalComponent);
+    modalRef.componentInstance.title = 'I your title';
+    modalRef.componentInstance.content = 'I am your content';
   }
-
 }
