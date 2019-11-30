@@ -2,7 +2,11 @@
 
 <p *ngIf="!dreamsList"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="dreamsList">
+<table
+  class="table table-striped"
+  aria-labelledby="tableLabel"
+  *ngIf="dreamsList"
+>
   <thead>
     <tr>
       <th>Title</th>
@@ -10,18 +14,19 @@
       <th>Amount</th>
       <th>User</th>
       <th>CreatedDate</th>
-
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let dreams of dreamsList">
       <td>{{ dreams.title }}</td>
       <td>{{ dreams.description }}</td>
-      <td>{{ dreams.amount | currency:'SEK '}}</td>
+      <td>{{ dreams.amount | currency: 'SEK ' }}</td>
       <td>{{ dreams.user }}</td>
-      <td>{{ dreams.createdDate | date : 'yyyy-MM-dd' }}</td>
+      <td>{{ dreams.createdDate | date: 'yyyy-MM-dd' }}</td>
     </tr>
   </tbody>
 </table>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open()">Create</button>
+<button class="btn btn-lg btn-outline-primary" (click)="openModal()">
+  Create
+</button>

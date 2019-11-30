@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
@@ -15,6 +15,7 @@ import { DreamsListDetailedInformationComponent } from './dreams/dreams-list/dre
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './shared/modal/modal.component';
+import { DreamSaverErrorHandler } from './shared/error-handler/dreamsaver-error-handler';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ModalComponent } from './shared/modal/modal.component';
     NgbModalModule,
   ],
   entryComponents: [ModalComponent],
-  providers: [],
+  providers: [{ provide: ErrorHandler, useClass: DreamSaverErrorHandler }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

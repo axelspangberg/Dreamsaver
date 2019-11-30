@@ -3,12 +3,12 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DreamsListService {
   private readonly baseUrl = 'api/dreams';
 
-  constructor(readonly http: HttpClient) { }
+  constructor(readonly http: HttpClient) {}
 
   getDreamLists(): Observable<DreamLists[]> {
     return this.http.get<DreamLists[]>(this.baseUrl);
@@ -22,9 +22,4 @@ export class DreamsListService {
   //     transmitterModelFrields
   //   );
   // }
-
 }
-
-
-
-
