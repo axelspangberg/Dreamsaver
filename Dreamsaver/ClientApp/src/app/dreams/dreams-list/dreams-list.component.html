@@ -1,6 +1,6 @@
 <h1 id="tableLabel">List of dreams</h1>
 
-<p *ngIf="!dreamsList"><em>Loading...</em></p>
+<p *ngIf="!dreamsList"><app-spinner></app-spinner></p>
 
 <table
   class="table table-striped"
@@ -26,7 +26,3 @@
     </tr>
   </tbody>
 </table>
-
-<button class="btn btn-lg btn-outline-primary" (click)="openModal()">
-  Create
-</button>

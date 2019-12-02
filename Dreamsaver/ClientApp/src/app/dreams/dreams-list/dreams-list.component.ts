@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DreamsListService } from './dreams-list.service';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from 'src/app/shared/modal/modal.component';
 
 @Component({
   selector: 'app-dreams-list',
@@ -13,15 +12,7 @@ export class DreamsListComponent implements OnInit {
   modalOptions: NgbModalOptions;
   closeResult: string;
 
-  constructor(
-    readonly service: DreamsListService,
-    private modalService: NgbModal,
-  ) {
-    this.modalOptions = {
-      backdrop: 'static',
-      backdropClass: 'customBackdrop',
-    };
-  }
+  constructor(readonly service: DreamsListService) {}
 
   ngOnInit(): void {
     this.initDreamsList();
@@ -31,11 +22,5 @@ export class DreamsListComponent implements OnInit {
     this.service.getDreamLists().subscribe(d => {
       this.dreamsList = d;
     });
-  }
-
-  openModal() {
-    const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.title = 'I your title';
-    modalRef.componentInstance.content = 'I am your content';
   }
 }

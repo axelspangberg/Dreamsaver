@@ -76,7 +76,7 @@ namespace Dreamsaver.Web
 
                 if (env.IsDevelopment())
                 {
-//                    spa.UseAngularCliServer(npmScript: "start"); // I want to separate angular app from .net core
+                   // spa.UseAngularCliServer(npmScript: "start"); // I want to separate angular app from .net core
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });

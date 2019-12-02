@@ -14,8 +14,9 @@ import { DreamsListCreateComponent } from './dreams/dreams-list/dreams-list-crea
 import { DreamsListDetailedInformationComponent } from './dreams/dreams-list/dreams-list-detailed-information/dreams-list-detailed-information.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalComponent } from './shared/modal/modal.component';
 import { DreamSaverErrorHandler } from './shared/error-handler/dreamsaver-error-handler';
+import { SpinnerComponent } from './shared/spinner/spinner-app/spinner.component';
+import { SpinnerOverlayComponent } from './shared/spinner/spinner-overlay/spinner-overlay.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DreamSaverErrorHandler } from './shared/error-handler/dreamsaver-error-
     DreamsListComponent,
     DreamsListCreateComponent,
     DreamsListDetailedInformationComponent,
-    ModalComponent,
+    SpinnerComponent,
+    SpinnerOverlayComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,7 +38,6 @@ import { DreamSaverErrorHandler } from './shared/error-handler/dreamsaver-error-
     ToastrModule.forRoot(),
     NgbModalModule,
   ],
-  entryComponents: [ModalComponent],
   providers: [{ provide: ErrorHandler, useClass: DreamSaverErrorHandler }],
   bootstrap: [AppComponent],
 })

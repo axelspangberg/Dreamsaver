@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Dreamsaver.Core.Requests.Dreams.Queries;
 using MediatR;
@@ -22,6 +20,7 @@ namespace Dreamsaver.Web.Controllers
         [HttpGet("")]
         public async Task<ActionResult<IList<GetAllDreamsForUserQuery.Response>>> GetAllDreamsForUser()
         {
+//            await Task.Delay(2000);
             return Ok(await _mediator.Send(new GetAllDreamsForUserQuery()));
         } 
     }
