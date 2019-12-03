@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DreamsListService } from './dreams-list.service';
-import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dreams-list',
@@ -9,7 +8,6 @@ import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DreamsListComponent implements OnInit {
   dreamsList: DreamLists[];
-  modalOptions: NgbModalOptions;
   closeResult: string;
 
   constructor(readonly service: DreamsListService) {}
