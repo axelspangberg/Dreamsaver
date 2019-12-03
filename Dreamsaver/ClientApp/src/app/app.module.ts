@@ -9,14 +9,14 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { DreamsListComponent } from './dreams/dreams-list/dreams-list.component';
-import { DreamsListCreateComponent } from './dreams/dreams-list/dreams-list-create/dreams-list-create.component';
-// tslint:disable-next-line: max-line-length
-import { DreamsListDetailedInformationComponent } from './dreams/dreams-list/dreams-list-detailed-information/dreams-list-detailed-information.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DreamSaverErrorHandler } from './shared/error-handler/dreamsaver-error-handler';
 import { SpinnerComponent } from './shared/spinner/spinner-app/spinner.component';
 import { SpinnerOverlayComponent } from './shared/spinner/spinner-overlay/spinner-overlay.component';
+import { DreamsCreateComponent } from './dreams/dreams-create/dreams-create.component';
+import { DreamsDetailedInformationComponent } from './dreams/dreams-detailed-information/dreams-detailed-information.component';
+import { DreamsPageComponent } from './dreams/dreams-page.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,11 @@ import { SpinnerOverlayComponent } from './shared/spinner/spinner-overlay/spinne
     NavMenuComponent,
     HomeComponent,
     DreamsListComponent,
-    DreamsListCreateComponent,
-    DreamsListDetailedInformationComponent,
+    DreamsCreateComponent,
+    DreamsDetailedInformationComponent,
     SpinnerComponent,
     SpinnerOverlayComponent,
+    DreamsPageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
