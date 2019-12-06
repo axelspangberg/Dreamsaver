@@ -8,17 +8,21 @@ namespace Dreamsaver.Infrastructure.fakes.DreamsEntity
 {
     public class FakeDreamsReader : IDreamsReader
     {
-        private static readonly IList<GetAllDreamsForUserQuery.Response> Dreams =
-            new List<GetAllDreamsForUserQuery.Response>
+
+        internal static IList<GetAllDreamsForUserQuery.Response> State;
+
+        static FakeDreamsReader()
+        {
+            State = new List<GetAllDreamsForUserQuery.Response>
             {
                 new GetAllDreamsForUserQuery.Response
                 {
-                   DreamsId = 1,
-                   Title = "Ny Cykel",
-                   Description = "Vill spara till att köpa ny cykel",
-                   Amount = 10000,
-                   User = "Axel Spångberg",
-                   CreatedDate = DateTime.Now.AddDays(-1)
+                    DreamsId = 1,
+                    Title = "Ny Cykel",
+                    Description = "Vill spara till att köpa ny cykel",
+                    Amount = 10000,
+                    User = "Axel Spångberg",
+                    CreatedDate = DateTime.Now.AddDays(-1)
                 },
                 new GetAllDreamsForUserQuery.Response
                 {
@@ -56,11 +60,13 @@ namespace Dreamsaver.Infrastructure.fakes.DreamsEntity
                     User = "Axel Spångberg",
                     CreatedDate = DateTime.Now.AddYears(-4)
                 }
+
             };
-        
+        }
+
         public async Task<IList<GetAllDreamsForUserQuery.Response>> GetDreams()
         {
-            return await Task.FromResult(Dreams);
+            return await Task.FromResult(State);
         }
     }
 }

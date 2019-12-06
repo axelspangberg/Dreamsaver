@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Dreamsaver.Core.Requests.Dreams.Commands;
 using Dreamsaver.Core.Requests.Dreams.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +21,14 @@ namespace Dreamsaver.Web.Controllers
         [HttpGet("")]
         public async Task<ActionResult<IList<GetAllDreamsForUserQuery.Response>>> GetAllDreamsForUser()
         {
-//            await Task.Delay(2000);
             return Ok(await _mediator.Send(new GetAllDreamsForUserQuery()));
         } 
+        
+        [HttpPost("save")]
+        public async Task<ActionResult> SaveDreamsFields(SaveDreamsFieldsCommand command)
+        {
+            return Ok(await _mediator.Send(command));
+        }
+        
     }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DreamsListService } from './dreams-list.service';
+import { DreamsService } from '../dreams.service';
 
 @Component({
   selector: 'app-dreams-list',
@@ -7,10 +7,10 @@ import { DreamsListService } from './dreams-list.service';
   styleUrls: ['./dreams-list.component.scss'],
 })
 export class DreamsListComponent implements OnInit {
-  dreamsList: DreamLists[];
+  dreamsList: IDream[];
   closeResult: string;
 
-  constructor(readonly service: DreamsListService) {}
+  constructor(readonly service: DreamsService) {}
 
   ngOnInit(): void {
     this.initDreamsList();

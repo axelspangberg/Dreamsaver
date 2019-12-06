@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { DreamsService } from '../dreams.service';
 
 @Component({
   selector: 'app-dreams-create',
@@ -14,6 +15,7 @@ export class DreamsCreateComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
+    readonly service: DreamsService,
   ) {}
 
   ngOnInit() {
@@ -30,12 +32,19 @@ export class DreamsCreateComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
     if (this.formGroup.invalid) {
       return;
     }
 
-    this.toastr.success('Saved');
+    const values: IDreamRequest = this.formGroup.value;
+    const request: IDreamRequest = {
+      title: values.title,
+      description: values.description,
+      amount: values.amount,
+    };
+    this.service.saveDreams(request).subscribe(() => {
+      this.toastr.success('Saved');
+    });
   }
 
   onReset() {
