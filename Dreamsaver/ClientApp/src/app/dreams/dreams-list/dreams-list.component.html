@@ -1,28 +1,47 @@
 <h1>List</h1>
 
-<p *ngIf="!dreamsList"><app-spinner></app-spinner></p>
+<table mat-table [dataSource]="dreamsList" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
 
-<table
-  class="table table-striped"
-  aria-labelledby="tableLabel"
-  *ngIf="dreamsList"
->
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>description</th>
-      <th>Amount</th>
-      <th>User</th>
-      <th>CreatedDate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let dreams of dreamsList">
-      <td>{{ dreams.title }}</td>
-      <td>{{ dreams.description }}</td>
-      <td>{{ dreams.amount | currency: 'SEK ' }}</td>
-      <td>{{ dreams.user }}</td>
-      <td>{{ dreams.createdDate | date: 'yyyy-MM-dd' }}</td>
-    </tr>
-  </tbody>
+  <!-- Position Column -->
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let element">{{ element.dreamsId }}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Title">
+    <th mat-header-cell *matHeaderCellDef>Title</th>
+    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Description">
+    <th mat-header-cell *matHeaderCellDef>Description</th>
+    <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Amount">
+    <th mat-header-cell *matHeaderCellDef>Amount</th>
+    <td mat-cell *matCellDef="let element">{{ element.amount }} kr</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Created By">
+    <th mat-header-cell *matHeaderCellDef>Created By</th>
+    <td mat-cell *matCellDef="let element">{{ element.user }}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Created Date">
+    <th mat-header-cell *matHeaderCellDef>Created Date</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.createdDate | date: 'yyyy-MM-dd' }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

@@ -7,8 +7,15 @@ import { DreamsService } from '../dreams.service';
   styleUrls: ['./dreams-list.component.scss'],
 })
 export class DreamsListComponent implements OnInit {
+  displayedColumns: string[] = [
+    'Id',
+    'Title',
+    'Description',
+    'Amount',
+    'Created By',
+    'Created Date',
+  ];
   dreamsList: IDream[];
-  closeResult: string;
 
   constructor(readonly service: DreamsService) {}
 
