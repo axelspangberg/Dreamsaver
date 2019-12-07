@@ -1,4 +1,5 @@
 using System.Reflection;
+using Dreamsaver.Core.Behavior;
 using Dreamsaver.Core.Requests.Dreams.Commands;
 using Dreamsaver.Core.Requests.Dreams.Interfaces;
 using Dreamsaver.Core.Requests.Dreams.Queries;
@@ -26,6 +27,9 @@ namespace Dreamsaver.Web
         public void ConfigureServices(IServiceCollection services)
         {            
             services.AddMediatR(typeof(GetAllDreamsForUserQuery).Assembly);
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            
             services.AddControllersWithViews().AddNewtonsoftJson();
             
             services.AddSingleton<IDreamsReader, FakeDreamsReader>();
@@ -51,8 +55,6 @@ namespace Dreamsaver.Web
                 app.UseHsts();
             }
             
-            
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())
@@ -77,7 +79,6 @@ namespace Dreamsaver.Web
 
                 if (env.IsDevelopment())
                 {
-                   // spa.UseAngularCliServer(npmScript: "start"); // I want to separate angular app from .net core
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });
