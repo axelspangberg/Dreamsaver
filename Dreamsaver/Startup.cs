@@ -27,13 +27,10 @@ namespace Dreamsaver.Web
         {            
             services.AddMediatR(typeof(GetAllDreamsForUserQuery).Assembly);
             services.AddControllersWithViews().AddNewtonsoftJson();
-
-            // DI SERVICES
+            
             services.AddSingleton<IDreamsReader, FakeDreamsReader>();
             services.AddSingleton<IDreamsSaver, FakeDreamsSaver>();
            
-            
-            
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
