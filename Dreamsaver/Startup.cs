@@ -1,5 +1,6 @@
 using System.Reflection;
 using Dreamsaver.Core.Behavior;
+using Dreamsaver.Core.Middlewares;
 using Dreamsaver.Core.Requests.Dreams.Commands;
 using Dreamsaver.Core.Requests.Dreams.Interfaces;
 using Dreamsaver.Core.Requests.Dreams.Queries;
@@ -55,6 +56,8 @@ namespace Dreamsaver.Web
                 app.UseHsts();
             }
             
+            app.UseCustomExceptionMiddleware();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())

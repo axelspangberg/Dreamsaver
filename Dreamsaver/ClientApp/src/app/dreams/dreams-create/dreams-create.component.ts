@@ -21,8 +21,8 @@ export class DreamsCreateComponent implements OnInit {
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
       title: ['', Validators.required],
-      description: ['', Validators.required],
-      amount: ['', Validators.required],
+      description: [''],
+      amount: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     });
   }
 

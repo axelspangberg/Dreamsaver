@@ -32,8 +32,9 @@ namespace Dreamsaver.Core.Requests.Dreams.Commands
         {
             public Validator()
             {
-//                RuleFor(command => command.Title).MaximumLength(5);
-//                RuleFor(command => command.Description).MaximumLength(5);
+                RuleFor(command => command.Title).MaximumLength(255);
+                RuleFor(command => command.Description).MaximumLength(255);
+                RuleFor(command => command.Amount).NotNull();
             }
         }
 

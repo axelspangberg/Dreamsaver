@@ -42,6 +42,7 @@ import { DreamsPageComponent } from './dreams/dreams-page.component';
     ToastrModule.forRoot(),
     MaterialModule,
   ],
+  entryComponents: [DreamsCreateComponent],
   providers: [{ provide: ErrorHandler, useClass: DreamSaverErrorHandler }],
   bootstrap: [AppComponent],
 })
