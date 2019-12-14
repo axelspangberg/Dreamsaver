@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DreamsService } from '../dreams.service';
+import { Store, select } from '@ngrx/store';
+import { IAppState } from 'src/app/store/state/app.state';
+import { GetDreams } from 'src/app/store/actions/dream.actions';
+import { selectDreamList } from 'src/app/store/selectors/dream.selectors';
 
 @Component({
   selector: 'app-dreams-list',
@@ -15,17 +19,15 @@ export class DreamsListComponent implements OnInit {
     'Created By',
     'Created Date',
   ];
-  dreamsList: IDream[];
+  dreamsList = this.store.pipe(select(selectDreamList));
+  // dreamsList: IDream[];
 
-  constructor(readonly service: DreamsService) {}
+  constructor(
+    readonly service: DreamsService,
+    private store: Store<IAppState>,
+  ) {}
 
   ngOnInit(): void {
-    this.initDreamsList();
-  }
-
-  private initDreamsList() {
-    this.service.getDreamLists().subscribe(d => {
-      this.dreamsList = d;
-    });
+    this.store.dispatch(new GetDreams());
   }
 }

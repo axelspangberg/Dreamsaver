@@ -19,6 +19,13 @@ import { SpinnerOverlayComponent } from './shared/spinner/spinner-overlay/spinne
 import { DreamsCreateComponent } from './dreams/dreams-create/dreams-create.component';
 import { DreamsDetailedInformationComponent } from './dreams/dreams-detailed-information/dreams-detailed-information.component';
 import { DreamsPageComponent } from './dreams/dreams-page.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/reducers/app.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { DreamEffects } from './store/effects/dream.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -41,6 +48,10 @@ import { DreamsPageComponent } from './dreams/dreams-page.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MaterialModule,
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([DreamEffects]),
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   entryComponents: [DreamsCreateComponent],
   providers: [{ provide: ErrorHandler, useClass: DreamSaverErrorHandler }],

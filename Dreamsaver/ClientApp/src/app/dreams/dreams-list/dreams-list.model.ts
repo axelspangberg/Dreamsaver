@@ -12,3 +12,7 @@ interface IDreamRequest {
   description: string;
   amount: number;
 }
+
+interface IDreamHttp {
+  dreams: IDream[];
+}
