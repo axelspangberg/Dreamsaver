@@ -20,7 +20,6 @@ export class DreamsListComponent implements OnInit {
     'Created Date',
   ];
   dreamsList = this.store.pipe(select(selectDreamList));
-  // dreamsList: IDream[];
 
   constructor(
     readonly service: DreamsService,

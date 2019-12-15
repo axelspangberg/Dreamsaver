@@ -12,6 +12,14 @@ export const dreamReducers = (
         dreams: action.payload,
       };
     }
+
+    case EDreamsActions.CreateDreamSuccess: {
+      return {
+        ...state,
+        dreams: action.payload,
+      };
+    }
+
     default:
       return state;
   }
