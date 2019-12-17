@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { DreamsService } from '../dreams.service';
-import { CreateDream } from 'src/app/store/actions/dream.actions';
+import { CreateDream, GetDreams } from 'src/app/store/actions/dream.actions';
 import { Store } from '@ngrx/store';
 import { IAppState } from 'src/app/store/state/app.state';
 
@@ -48,9 +48,7 @@ export class DreamsCreateComponent implements OnInit {
     };
 
     this.store.dispatch(new CreateDream(request));
-    // this.service.saveDreams(request).subscribe(() => {
-    //   this.toastr.success('Saved');
-    // });
+    this.store.dispatch(new GetDreams());
   }
 
   onReset() {
